@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python Quest</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Python Quest home"><span>🐍</span> Python Quest</a>
+        <div class="progress-wrap" aria-label="Game progress">
+          <span id="progress-label">Level 1 of 15</span>
+          <div class="progress-track"><span id="progress-bar"></span></div>
+        </div>
+        <div class="gems" aria-label="Gems earned">💎 <span id="gem-count">0</span></div>
+      </header>
+
+      <section class="game-layout">
+        <aside class="level-panel">
+          <p class="panel-label">YOUR ADVENTURE</p>
+          <div class="level-list" id="level-list" aria-label="Levels"></div>
+          <button class="reset-button" id="reset-game">Reset game</button>
+        </aside>
+
+        <section class="challenge-panel" aria-live="polite">
+          <div class="challenge-heading">
+            <div>
+              <p class="kicker" id="level-number">LEVEL 01</p>
+              <h1 id="level-title">Wake the village</h1>
+            </div>
+            <span class="difficulty" id="difficulty">Warm-up</span>
+          </div>
+          <div class="story-card"><span class="story-icon" id="story-icon">🌤️</span><p id="story"></p></div>
+          <div class="instruction"><span>✦</span><p id="instruction"></p></div>
+
+          <div class="editor-card">
+            <div class="editor-title"><span><i></i><i></i><i></i> your_answer.py</span><span>Python</span></div>
+            <div class="editor-wrap"><span class="line-numbers" id="line-numbers">1</span><textarea id="code-input" spellcheck="false" aria-label="Write your Python code here" placeholder="# Write your code here"></textarea></div>
+          </div>
+          <div class="actions">
+            <button class="hint-button" id="hint-button">💡 Show a hint</button>
+            <button class="run-button" id="run-button">Run code <span>▶</span></button>
+          </div>
+          <div class="feedback hidden" id="feedback" role="status"></div>
+        </section>
+
+        <aside class="side-panel">
+          <div class="companion-card"><div class="companion">🧙</div><p class="panel-label">CODE GUIDE</p><h2>Byte the wizard</h2><p id="guide-text">Start small. One line can make magic.</p></div>
+          <div class="reward-card"><span>💎</span><div><strong id="reward-number">5 gems</strong><small>reward for this level</small></div></div>
+          <div class="tip-card"><p class="panel-label">QUICK TIP</p><p id="tip-text">Text must be inside quotation marks.</p></div>
+        </aside>
+      </section>
+    </main>
+
+    <div class="modal hidden" id="reward-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-card">
+        <div class="sparkles">✦ 💎 ✦</div>
+        <p class="kicker">LEVEL COMPLETE</p>
+        <h2 id="modal-title">Wonderful work!</h2>
+        <p id="modal-text">You solved the challenge.</p>
+        <div class="modal-reward">+<span id="modal-gems">5</span> 💎</div>
+        <button class="next-button" id="next-level">Next level <span>→</span></button>
+      </div>
+    </div>
+    <script src="game.js"></script>
+  </body>
+</html>
